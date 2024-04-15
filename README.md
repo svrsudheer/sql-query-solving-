@@ -1,6 +1,6 @@
 # sql-query-solving-
 solving sql queries -project
-- # [https://platform.stratascratch.com/coding/9791-views-per-keyword?code_type=3](https://svrsudheer.github.io/sql-query-solving-/)
+- # [stratascratch-9791-highest view count first](https://platform.stratascratch.com/coding/9791-views-per-keyword?code_type=3))
 
 
 
