@@ -47,3 +47,12 @@ SELECT
      order by totalpaybenefits asc
    ;
 ```
+- # [https://platform.stratascratch.com/coding/10131-business-name-lengths?code_type=3](https://platform.stratascratch.com/coding/10131-business-name-lengths?code_type=3)
+
+```
+select business_name,
+        regexp_replace(business_name,'[&,#]' ,''),
+        length(regexp_replace(business_name,'[&,#]' ,''))
+             from 
+             sf_restaurant_health_violations;
+```
