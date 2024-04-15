@@ -1,6 +1,6 @@
 # sql-query-solving-
 solving sql queries -project
-#https://platform.stratascratch.com/coding/9791-views-per-keyword?code_type=3
+# https://platform.stratascratch.com/coding/9791-views-per-keyword?code_type=3
 
 
 Create a report showing how many views each keyword has. Output the keyword and the total views, and order records with highest view count first.
