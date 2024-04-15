@@ -90,3 +90,10 @@ where year(wfm_transactions.transaction_date) = 2017
 group by wfm_stores.store_brand,wfm_transactions.customer_id
 ;
 ```
+- # Most Profitable Companies
+- # [https://platform.stratascratch.com/coding/10354-most-profitable-companies?code_type=3](https://platform.stratascratch.com/coding/10354-most-profitable-companies?code_type=3)
+select company, MAX(profits) AS most_profitable
+from forbes_global_2010_2014
+GROUP BY company
+ORDER BY most_profitable DESC
+LIMIT 3;
