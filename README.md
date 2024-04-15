@@ -56,7 +56,7 @@ select business_name,
              from 
              sf_restaurant_health_violations;
 ```
-- #[https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=3](https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=3)
+- # [https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=3](https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=3)
 
 ```
 select description, max(unitprice*quantity) from online_retail
@@ -67,4 +67,26 @@ group by month(invoicedate)
 select description, month(invoicedate),max(unitprice*quantity) from online_retail
 group by month(invoicedate)
 order by 2
+```
+- # [https://platform.stratascratch.com/coding/2038-wfm-brand-segmentation-based-on-customer-activity?code_type=3](https://platform.stratascratch.com/coding/2038-wfm-brand-segmentation-based-on-customer-activity?code_type=3)
+
+
+note----problem when using case statement 
+```
+select  wfm_stores.store_brand
+,count(wfm_transactions.customer_id) as number_of_customers
+,count(wfm_transactions.transaction_id) as number_of_transactions 
+,sum(wfm_transactions.sales) as total_sales,
+sum(wfm_transactions.sales)/count(wfm_transactions.transaction_id) as avgsale,
+case(sum(wfm_transactions.sales)/count(wfm_transactions.transaction_id)) 
+when (sum(wfm_transactions.sales)/count(wfm_transactions.transaction_id)) > 30 then 'high'
+when (sum(wfm_transactions.sales)/count(wfm_transactions.transaction_id)) between 20 and 30 then 'medium'
+else 'low'
+end as segment
+
+from wfm_transactions
+join wfm_stores on wfm_stores.store_id=wfm_transactions.store_id
+where year(wfm_transactions.transaction_date) = 2017
+group by wfm_stores.store_brand,wfm_transactions.customer_id
+;
 ```
