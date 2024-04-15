@@ -15,7 +15,7 @@ group by facebook_posts.post_id
 order by facebook_post_views.viewer_id desc
 ;
 ```
-- # [https://platform.stratascratch.com/coding/9979-find-the-top-5-highest-paid-and-top-5-least-paid-employees-in-2012?code_type=3]
+- # [https://platform.stratascratch.com/coding/9979-find-the-top-5-highest-paid-and-top-5-least-paid-employees-in-2012?code_type=3](https://svrsudheer.github.io/sql-query-solving-/)
 ```
 SELECT 
      employeename, totalpaybenefits
