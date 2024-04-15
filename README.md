@@ -56,3 +56,15 @@ select business_name,
              from 
              sf_restaurant_health_violations;
 ```
+- #[https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=3](https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=3)
+
+```
+select description, max(unitprice*quantity) from online_retail
+group by month(invoicedate)
+
+;
+
+select description, month(invoicedate),max(unitprice*quantity) from online_retail
+group by month(invoicedate)
+order by 2
+```
