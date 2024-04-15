@@ -15,3 +15,35 @@ group by facebook_posts.post_id
 order by facebook_post_views.viewer_id desc
 ;
 ```
+- # [https://platform.stratascratch.com/coding/9979-find-the-top-5-highest-paid-and-top-5-least-paid-employees-in-2012?code_type=3]
+```
+SELECT 
+     employeename, totalpaybenefits
+     from
+    
+    (SELECT 
+         employeename, totalpaybenefits,
+         dense_rank() over(order by totalpaybenefits asc) as salary_rank
+         
+     FROM
+         sf_public_salaries
+     WHERE year = 2012
+     ORDER BY salary_rank asc limit 5) AS t1
+     union
+     SELECT 
+     employeename, totalpaybenefits
+     from
+    
+    (SELECT 
+         employeename, totalpaybenefits,
+         dense_rank() over(order by totalpaybenefits asc) as salary_rank
+         
+     FROM
+         sf_public_salaries
+     WHERE year = 2012
+     ORDER BY salary_rank desc limit 5) AS t2
+     
+     
+     order by totalpaybenefits asc
+   ;
+```
