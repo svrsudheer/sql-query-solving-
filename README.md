@@ -99,3 +99,19 @@ GROUP BY company
 ORDER BY most_profitable DESC
 LIMIT 3;
 ```
+```
+- # department-top-three-salaries
+- # [https://leetcode.com/problems/department-top-three-salaries/description/](https://leetcode.com/problems/department-top-three-salaries/description/)
+```
+
+  with cte_salary_dep as
+  (
+  select d.name as depname,e.name as ename,e.salary as emp_salary,dense_rank() 
+  over (partition by d.name order by e.salary desc)  as top from Employee e
+  join Department d on e.departmentId  =d.id
+  )
+  select depname,ename,emp_salary from cte_salary_dep
+    where top <=3;
+    
+
+```
