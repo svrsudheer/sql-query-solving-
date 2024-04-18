@@ -111,6 +111,5 @@ as top from Employee e
 join Department d on e.departmentId  =d.id
 )
 select depname,ename,emp_salary from cte_salary_dep
-where top <=3;
-    
+where top <=3;  
 ```
